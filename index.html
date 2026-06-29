@@ -1,243 +1,52 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: radial-gradient(circle at top, #0b1736 0, #050814 55%, #000000 100%);
-  color: #f5f7ff;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Projet Blue Lock - Plan Latéral Gauche</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="logo-circle">PB</div>
+    <div class="title-block">
+      <h1>Projet Blue Lock</h1>
+      <p>Assistant d'entraînement pour latéral gauche sur 6 mois.</p>
+    </div>
+  </header>
 
-.app-header {
-  display: flex;
-  align-items: center;
-  padding: 1.2rem 1.5rem;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  backdrop-filter: blur(10px);
-}
+  <main class="app-main">
+    <section class="config-card">
+      <h2>Configuration de la semaine</h2>
+      <div class="config-row">
+        <label for="phase-select">Phase :</label>
+        <select id="phase-select">
+          <option value="base">0–2 mois · Bases</option>
+          <option value="intensif">2–4 mois · Intensif</option>
+          <option value="match">4–6 mois · Match player</option>
+        </select>
+      </div>
+      <div class="config-row">
+        <label for="week-input">Semaine :</label>
+        <input type="number" id="week-input" min="1" max="24" value="1">
+      </div>
+      <button id="generate-btn" class="primary-btn">Générer la semaine</button>
+    </section>
 
-.logo-circle {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #3b82f6, #22c55e);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 1.1rem;
-  margin-right: 0.8rem;
-}
+    <section class="summary-card" id="phase-summary">
+      <!-- Résumé de la phase injecté par JS -->
+    </section>
 
-.title-block h1 {
-  font-size: 1.4rem;
-}
+    <section class="sessions-grid" id="sessions">
+      <!-- Cartes de séances injectées par JS -->
+    </section>
+  </main>
 
-.title-block p {
-  font-size: 0.9rem;
-  color: #cbd5f5;
-}
+  <footer class="app-footer">
+    <p>Projet Blue Lock · hébergeable sur GitHub Pages · pensé pour mobile.</p>
+  </footer>
 
-.app-main {
-  flex: 1;
-  padding: 1.2rem 1.5rem 1.5rem;
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-.config-card,
-.summary-card {
-  background: rgba(15,23,42,0.9);
-  border-radius: 0.9rem;
-  padding: 1.2rem 1.1rem;
-  box-shadow: 0 18px 40px rgba(15,23,42,0.65);
-  border: 1px solid rgba(148,163,184,0.4);
-  margin-bottom: 1rem;
-}
-
-.config-card h2 {
-  font-size: 1.1rem;
-  margin-bottom: 0.8rem;
-}
-
-.config-row {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 0.8rem;
-}
-
-.config-row label {
-  font-size: 0.9rem;
-  margin-bottom: 0.25rem;
-}
-
-select,
-input[type="number"] {
-  padding: 0.45rem 0.65rem;
-  border-radius: 0.5rem;
-  border: 1px solid rgba(148,163,184,0.7);
-  background: #020617;
-  color: #e5e7eb;
-  font-size: 0.95rem;
-}
-
-select:focus,
-input[type="number"]:focus {
-  outline: none;
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 1px rgba(59,130,246,0.6);
-}
-
-.primary-btn {
-  margin-top: 0.4rem;
-  padding: 0.55rem 0.9rem;
-  border-radius: 999px;
-  border: none;
-  cursor: pointer;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #0b1120;
-  background: linear-gradient(135deg, #3b82f6, #22c55e);
-  box-shadow: 0 12px 30px rgba(34,197,94,0.35);
-}
-
-.primary-btn:hover {
-  filter: brightness(1.05);
-}
-
-.sessions-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.9rem;
-  margin-top: 0.5rem;
-}
-
-@media (min-width: 640px) {
-  .sessions-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-.session-card {
-  background: rgba(15,23,42,0.9);
-  border-radius: 0.9rem;
-  padding: 1rem;
-  border: 1px solid rgba(148,163,184,0.35);
-  position: relative;
-  overflow: hidden;
-}
-
-.session-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at top left, rgba(59,130,246,0.25), transparent 55%);
-  opacity: 0;
-  transition: opacity 0.2s ease-out;
-}
-
-.session-card:hover::before {
-  opacity: 1;
-}
-
-.session-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.4rem;
-}
-
-.session-meta span {
-  font-size: 0.85rem;
-  color: #cbd5f5;
-}
-
-.session-title {
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 0.3rem;
-}
-
-.session-type {
-  font-size: 0.85rem;
-  color: #9ca3af;
-  margin-bottom: 0.3rem;
-}
-
-.session-desc {
-  font-size: 0.85rem;
-  color: #e5e7eb;
-  margin-bottom: 0.6rem;
-}
-
-.session-schema {
-  font-size: 0.8rem;
-  color: #cbd5f5;
-  margin-bottom: 0.4rem;
-  padding: 0.4rem 0.6rem;
-  border-radius: 0.6rem;
-  background: rgba(15,23,42,0.95);
-  border: 1px dashed rgba(148,163,184,0.7);
-  white-space: pre-line;
-}
-
-.session-steps,
-.session-cues {
-  font-size: 0.8rem;
-  color: #e5e7eb;
-  margin-left: 1.1rem;
-  margin-bottom: 0.4rem;
-}
-
-.session-steps li,
-.session-cues li {
-  margin-bottom: 0.2rem;
-}
-
-.session-actions {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 0.4rem;
-}
-
-.session-actions button {
-  padding: 0.35rem 0.7rem;
-  border-radius: 999px;
-  border: 1px solid rgba(148,163,184,0.7);
-  background: #020617;
-  color: #e5e7eb;
-  font-size: 0.8rem;
-  cursor: pointer;
-}
-
-.session-actions button.session-done-btn {
-  border-color: #22c55e;
-}
-
-.session-actions button:hover {
-  background: #0f172a;
-}
-
-.session-status {
-  font-size: 0.8rem;
-  color: #9ca3af;
-}
-
-.session-status.done {
-  color: #22c55e;
-}
-
-.app-footer {
-  padding: 0.9rem 1.2rem;
-  font-size: 0.8rem;
-  text-align: center;
-  color: #94a3b8;
-  border-top: 1px solid rgba(15,23,42,0.7);
-  background: rgba(2,6,23,0.85);
-}
+  <script src="app.js"></script>
+</body>
+</html>
