@@ -30,13 +30,13 @@ const sessionCatalog = {
     type: "Terrain",
     desc: "Contrôle orienté ligne, passes courtes, 1v1 défensif simple, overlaps + centres à blanc.",
     duration: "75 min",
-    schema: "Couloir gauche (vue simplifiée) :
+    schema: `Couloir gauche (vue simplifiée):
 
 [But]-----------------------------
         A1           Cx
  LG
 
-LG = latéral gauche, A1 = ailier, Cx = zone de centre.",
+LG = latéral gauche, A1 = ailier, Cx = zone de centre.`,
     steps: [
       "Placer LG en bas du couloir, ailier A1 au milieu du couloir avec ballon.",
       "LG se propose en solution courte (passe en retrait) pour habituer le lien avec A1.",
@@ -55,10 +55,10 @@ LG = latéral gauche, A1 = ailier, Cx = zone de centre.",
     type: "Salle",
     desc: "Circuit squats/fentes, pompes, tractions, gainage, petits sauts.",
     duration: "45–60 min",
-    schema: "Disposition salle :
+    schema: `Disposition salle:
 
 [Squat]  [Fentes]  [Pompes]  [Tractions]  [Gainage]
-Enchaîner les ateliers en circuit (30–40 s par exo).",
+Enchaîner les ateliers en circuit (30–40 s par exo).`,
     steps: [
       "Échauffer articulations (chevilles, genoux, hanches, épaules).",
       "Enchaîner 4–5 exercices : squats, fentes, pompes, tractions, gainage.",
@@ -77,11 +77,11 @@ Enchaîner les ateliers en circuit (30–40 s par exo).",
     type: "Terrain",
     desc: "Drills avec ballon, courses variées, montées/descente du couloir en continu.",
     duration: "60 min",
-    schema: "Couloir gauche :
+    schema: `Couloir gauche:
 
 LG part de la zone basse, conduit le ballon jusqu'à différents cônes alignés dans le couloir, puis revient.
 
-Ex : C1 (proche), C2 (milieu), C3 (haut).",
+Ex : C1 (proche), C2 (milieu), C3 (haut).`,
     steps: [
       "Placer 3 cônes dans le couloir (bas, milieu, haut).",
       "LG commence en bas avec ballon, conduit jusqu'à C1 puis revient.",
@@ -101,9 +101,9 @@ Ex : C1 (proche), C2 (milieu), C3 (haut).",
     type: "Terrain",
     desc: "Centres en course, 1v1 avec changements de direction, sorties de pressing pied droit/pied gauche.",
     duration: "75 min",
-    schema: "Zone latérale + pressing :
+    schema: `Zone latérale + pressing:
 
-Deux défenseurs placés pour presser LG, qui doit sortir de la zone en utilisant feintes et changements de direction.",
+Deux défenseurs placés pour presser LG, qui doit sortir de la zone en utilisant feintes et changements de direction.`,
     steps: [
       "Placer LG près de la ligne avec ballon, 1–2 joueurs en opposition simulée.",
       "Simuler une pression côté intérieur, LG utilise feinte (stepover, crochet) pour sortir.",
@@ -122,9 +122,9 @@ Deux défenseurs placés pour presser LG, qui doit sortir de la zone en utilisan
     type: "Salle",
     desc: "Fentes unilatérales, step-ups, sauts, sprints 10–20 m, core anti-rotation.",
     duration: "45–60 min",
-    schema: "Circuit explosif :
+    schema: `Circuit explosif:
 
-[Fentes unilatérales] -> [Step-ups] -> [Sauts] -> [Sprints 10–20 m] -> [Core].",
+[Fentes unilatérales] -> [Step-ups] -> [Sauts] -> [Sprints 10–20 m] -> [Core].`,
     steps: [
       "Échauffer particulièrement les hanches et les genoux.",
       "Travailler chaque jambe séparément sur les fentes et step-ups.",
@@ -143,9 +143,9 @@ Deux défenseurs placés pour presser LG, qui doit sortir de la zone en utilisan
     type: "Terrain",
     desc: "Intervalles 30–40 s d'effort / 20–30 s de récup avec ballon dans le couloir.",
     duration: "60 min",
-    schema: "Intervalles :
+    schema: `Intervalles:
 
-LG monte avec ballon du bas du couloir jusqu'à la zone haute, puis redescend, répété sur intervalles chronométrés.",
+LG monte avec ballon du bas du couloir jusqu'à la zone haute, puis redescend, répété sur intervalles chronométrés.`,
     steps: [
       "Définir une zone de départ (bas du couloir) et une zone d'arrivée (haut).",
       "Pendant 30–40 s, LG enchaîne montées/descente avec ballon.",
@@ -165,7 +165,7 @@ LG monte avec ballon du bas du couloir jusqu'à la zone haute, puis redescend, r
     type: "Terrain",
     desc: "Jeux réduits, ligne défensive, pressing coordonné, timing des montées et des retours.",
     duration: "75 min",
-    schema: "Mini-match sur demi-terrain avec focus sur le côté gauche : travail de la ligne défensive et des montées du latéral.",
+    schema: `Mini-match sur demi-terrain avec focus sur le côté gauche : travail de la ligne défensive et des montées du latéral.`,
     steps: [
       "Organiser un jeu réduit où le côté gauche est très sollicité.",
       "Donner des consignes spécifiques à LG sur les montées et retours.",
@@ -190,9 +190,9 @@ LG monte avec ballon du bas du couloir jusqu'à la zone haute, puis redescend, r
     type: "Terrain",
     desc: "Montées offensives simulées + retours défensifs en diagonale, gestion de la fatigue.",
     duration: "60 min",
-    schema: "Couloir + diagonale :
+    schema: `Couloir + diagonale:
 
-LG monte dans le couloir avec ballon, puis doit sprinter en diagonale vers une zone défensive centrale pour simuler un retour.",
+LG monte dans le couloir avec ballon, puis doit sprinter en diagonale vers une zone défensive centrale pour simuler un retour.`,
     steps: [
       "Placer une zone offensive haute dans le couloir et une zone défensive plus centrale.",
       "LG monte avec ballon jusqu'à la zone offensive.",
