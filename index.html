@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Projet Blue Lock - Plan Latéral Gauche</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="logo-circle">PB</div>
+    <div class="title-block">
+      <h1>Projet Blue Lock</h1>
+      <p>Assistant d'entraînement pour latéral gauche sur 6 mois.</p>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <section class="config-card">
+      <h2>Configuration de la semaine</h2>
+      <div class="config-row">
+        <label for="phase-select">Phase :</label>
+        <select id="phase-select">
+          <option value="base">0–2 mois · Bases</option>
+          <option value="intensif">2–4 mois · Intensif</option>
+          <option value="match">4–6 mois · Match player</option>
+        </select>
+      </div>
+      <div class="config-row">
+        <label for="week-input">Semaine :</label>
+        <input type="number" id="week-input" min="1" max="24" value="1">
+      </div>
+      <button id="generate-btn" class="primary-btn">Générer la semaine</button>
+    </section>
+
+    <section class="summary-card" id="phase-summary">
+      <!-- Résumé de la phase injecté par JS -->
+    </section>
+
+    <section class="sessions-grid" id="sessions">
+      <!-- Cartes de séances injectées par JS -->
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>Projet Blue Lock · hébergeable sur GitHub Pages · pensé pour mobile.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
